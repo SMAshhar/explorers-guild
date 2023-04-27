@@ -1,8 +1,9 @@
 'use client'
 import React from 'react'
-import BookingComponent from '@/components/book';
+import Booking from '@/components/book';
 import { useState } from "react";
 import localFont from 'next/font/local';
+import Contact from '@/components/contact';
 
 
 const cal = localFont({ src: '../../public/fonts/Poppins-ExtraLight.ttf' })
@@ -16,7 +17,8 @@ const SlideShow = () => {
   return (
     <div className="relative h-screen ">
       <div className={cal.className}>
-      <BookingComponent />   
+        <Contact />
+      <Booking />   
       </div>
     </div>
   );

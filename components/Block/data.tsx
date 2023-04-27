@@ -16,17 +16,17 @@ export const tiles: Data[] = [
     {
         heading: 'ICELAND TO GREENLAD TOUR',
         text: '9 day tour to explore the unique nature of Greenland and the Westfjords of Iceland.',
-        image: '/sunreef.jpg'
+        image: '/argas.jpg'
     },
     {
-        heading: 'DISKO BAY ADVENTURES',
+        heading: 'THAILAND TO MALDIVES',
         text: 'The extreme beauty of pure nature. Icebergs, whales and glaciers break into the sea. Going ashore for hikes in nature and experiencing the culture.',
-        image: '/argas.jpg'
+        image: '/boat1.webp'
     },
     {
         heading: 'PRIVATE TOURS',
         text: 'Select your bucket list activities and experiences for the whole tour.',
-        image: '/boat1.webp'
+        image: '/sunreef.jpg'
     },
 ]
 
@@ -44,4 +44,8 @@ export const amenities:Data = {
 export const tours:Data = {
     heading: 'Overview',
     text: `We offer a unique and unforgettable way to explore some of the world's most breathtaking destinations. Whether you're seeking an adventurous expedition into uncharted territories, a relaxing escape to tranquil blue waters, or a romantic getaway with a loved one, our charter yacht tours cater to all your desires and needs.`
+}
+export const next:Data = {
+    heading: 'What is next?',
+    text: `Just give us a ring and we will surely get back at you. You either choose one of our regular tours or design your own private tour exclusivly designed for your family and friends. Click the button below, share your information and we will surely get back to you.`
 }

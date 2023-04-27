@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa'
 import { RxHamburgerMenu, RxCross2 } from 'react-icons/Rx'
+import Contact from './contact';
+import Booking from './book';
 
 const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -40,9 +42,9 @@ const Header = () => {
                         <a href="#" className="text-gray-300 hover:text-gray-500">
                             Armada
                         </a>
-                        
+
                         <a href="#" className="text-gray-300 hover:text-gray-500">
-                            Contact
+                            <Contact />
                         </a>
                     </nav>
 
@@ -69,15 +71,19 @@ const Header = () => {
                             <a href="#" className="text-gray-500 hover:text-gray-700">
                                 Armada
                             </a>
-                           
+
                             <a href="#" className="text-gray-500 hover:text-gray-700">
-                                Contact
+                                <Contact />
                             </a>
 
                         </nav>
                         {/* Insert logo or other content here */}
                     </div></div>
-                <div className="flex items-end justify-end w-full mx-4 sm:mx-6 md:mx-12 lg:mx-16 ">
+
+                <div className="flex justify-end w-full mx-4 sm:mx-6 md:mx-12 lg:mx-16 items-center">
+                    <a href="#" className="text-gray-300 hover:text-gray-500">
+                        <Booking />
+                    </a>
                     <button
                         className="p-2 ml-4 text-gray-100 rounded-md focus:outline-none focus:bg-gray-700 hover:bg-gray-700"
                         onClick={toggleSearch}
@@ -85,6 +91,7 @@ const Header = () => {
                         <FaSearch />
                     </button>
                 </div>
+
 
                 {isSearchOpen && (
                     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50 w-full">

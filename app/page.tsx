@@ -33,7 +33,7 @@ export default function page() {
   return (
     <div className=" w-screen text-md sm:text-lg md:text-xl lg:text-2xl ">
       {/* <Image src='/boat.jpg' alt='bg' width={96} height={96} className="absolute -z-50" /> */}
-      <h1 className="text-center h-screen bg-[url('/boat.jpg')] md:bg-cover bg-fixed -z-50 py-48 text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl"><p className={`${cal.variable} font-cal justify-center md:justify-end flex px-32`}>The Ocean Calls</p></h1>
+      <h1 className="text-center h-screen bg-[url('/boat.jpg')] md:bg-cover bg-fixed -z-50 py-48 text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl"><p className={`${cal.variable} font-cal justify-center md:text-cyan-600 md:justify-end flex px-32`}>The Ocean Calls</p></h1>
       <div className="flex w-screen ">
         {textBlock(data)}
         {/* heading with description */}

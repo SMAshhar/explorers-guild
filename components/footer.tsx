@@ -16,7 +16,7 @@ const poppins = localFont({
 export default function Footer() {
     return (
         <div>
-            <div className="flex justify-end items-end h-screen bg-white md:bg-center md:bg-[url('/footer-ice.png')]">
+            <div className="flex justify-end items-end h-screen bg-white md:bg-center md:bg-[url('/footer-ice.png')] z-50">
                 <div className="flex flex-col absolute h-full mt-8 mr-20 items-end justify-center">
                     <img src="/logo3.png" className="flex w-20 h-24 justify-end py-2 text-gray-700 md:text-white hover:text-gray-500" />
                     <Link href={'/'} className={`${poppins.variable} font-pop text-sm font-extralight sm:text-md md:text-lg lg:text-xl xl:text-2xl pt-2 text-gray-700 md:text-white hover:text-gray-500`} >Home</Link>
