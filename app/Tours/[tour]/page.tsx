@@ -1,8 +1,5 @@
-import Booking from '@/components/book';
-import Contact from '@/components/contact';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import localFont from 'next/font/local';
-import { Suspense } from 'react';
 
 const poppins = localFont({
   src: [
@@ -28,7 +25,7 @@ async function getBlogs() {
   return res.json();
 }
 
-function textBlock(data: any, blogs: any, tour: number) {
+function textBlock(data: any, blogs: any, tour: any) {
   const image1 = 'https:' + blogs.includes.Asset[tour].fields.file.url
   const image2 = 'https:' + blogs.includes.Asset[tour + 1].fields.file.url
   return (
@@ -39,25 +36,26 @@ function textBlock(data: any, blogs: any, tour: number) {
       <div className='flex w-full'>
         <div className=' w-full md:w-1/2'>
           <div
-            className={`${poppins.variable} font-pop w-full md:w-full pr-4 text-gray-700 text-sm font-extralight sm:text-lg md:text-xl lg:text-2xl xl:text-3xl pb-10 md:pb-20`}
+            className={`${poppins.variable} font-pop w-full pr-4 text-gray-700 text-sm font-extralight sm:text-md md:text-lg lg:text-2xl xl:text-3xl pb-10 md:pb-20`}
           >
-            <p className='pb-8'>Tour's Highlights:</p>
+            <p className='pb-8'>Tour Highlights:</p>
             {documentToReactComponents(data.fields.highlightes)}
           </div>
-          <div className={`${poppins.variable} font-pop w-full md:w-full pr-4 text-gray-700 text-sm font-extralight sm:text-lg md:text-xl lg:text-2xl xl:text-3xl pb-10 md:pb-20`}>
+          <div className={`${poppins.variable} font-pop w-ful pr-4 text-gray-700 text-sm font-extralight sm:text-md md:text-lg lg:text-2xl xl:text-3xl pb-10 md:pb-20`}>
+            <p className='pb-8'>Description:</p>
             {documentToReactComponents(data.fields.details)}
           </div>
-          <div className={`${poppins.variable} font-pop w-full md:w-full pr-4 text-gray-700 text-sm font-extralight sm:text-lg md:text-xl lg:text-2xl xl:text-3xl pb-10 md:pb-20`}>
+          <div className={`${poppins.variable} font-pop w-full pr-4 text-gray-700 text-sm font-extralight sm:text-md md:text-lg lg:text-2xl xl:text-3xl pb-10 md:pb-20`}>
             From ${data.fields.cost}
           </div>
 
         </div>
-        <div className=' w-auto gap-2 h-screen pt-8 pl-16 hidden md:flex'>
-          <div className='w-1/2'>
-            <img src={image1} alt='image1' className='h-[700px] w-full ' />
+        <div className=' w-auto gap-2 h-[1024px] pt-8 pl-16 hidden md:flex'>
+          <div className='h-full w-auto md:w-1/2'>
+            <img src={image1} alt='image1' className='h-4/5 hidden lg:block w-full ' />
           </div>
-          <div className='h-[120vh] justify-end items-end flex w-1/2 '>
-            <img src={image2} alt='image1' className='h-[700px] w-full -z-0' />
+          <div className='h-full justify-end items-end flex w-full md:w-1/2 '>
+            <img src={image2} alt='image1' className='h-4/5 w-full' />
           </div>
         </div>
       </div>
@@ -65,25 +63,40 @@ function textBlock(data: any, blogs: any, tour: number) {
   )
 }
 
-type Params = {
+interface Params {
   params: {
     tour: string
   }
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { tour: 'i-to-g' } }, // See the "paths" section below
-      { params: { tour: 't-to-m' } }, // See the "paths" section below
-      { params: { tour: '/p-to-t' } }, // See the "paths" section below
-    ],
-    fallback: true
-  };
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       { params: { tour: 'i-to-g' } }, // See the "paths" section below
+//       { params: { tour: 't-to-m' } }, // See the "paths" section below
+//       { params: { tour: 'p-to-t' } }, // See the "paths" section below
+//     ],
+//     fallback: false
+//   };
+// }
+// export async function getStaticProps(context:any) {
+//   return {
+//     // Passed to the page component as props
+//     props: { post: {} },
+//   }
+// }
+
+export async function generateStaticParams() {
+  return [
+    { tour: 'i-to-g' }, // See the "paths" section below
+    { tour: 't-to-m' }, // See the "paths" section below
+    { tour: 'p-to-t' }, // See the "paths" section below
+  ]
 }
 
-export default async function Tour({ params: { tour } }: Params) {
+export default async function Tour({ params }: { params: { tour: string } }) {
   const blogs = await getBlogs();
+  const { tour } = params
   const dynamicTour = blogs.items.find((item: any) => item.fields.page === tour)
 
 
@@ -92,12 +105,6 @@ export default async function Tour({ params: { tour } }: Params) {
       {
         dynamicTour && textBlock(dynamicTour, blogs, dynamicTour.fields.number)
       }
-   
-
-      <div className='flex justify-around w-full'>
-        {/* <Contact /> */}
-        {/* <Booking /> */}
-      </div>
     </div >
   )
 }

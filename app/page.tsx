@@ -3,8 +3,8 @@ import Slideshow from "../components/slideShow";
 import localFont from '@next/font/local'
 import { data, octopus, activities, amenities } from "@/components/Block/data";
 import textBlock, { textWrite } from "@/components/Block/text-block";
-import Footer from "@/components/footer";
 import Link from "next/link";
+import CheckTours from "@/components/checkTours";
 
 const cal = localFont({
   src: [
@@ -33,7 +33,7 @@ export default function page() {
   return (
     <div className=" w-screen text-md sm:text-lg md:text-xl lg:text-2xl ">
       {/* <Image src='/boat.jpg' alt='bg' width={96} height={96} className="absolute -z-50" /> */}
-      <h1 className="text-center h-screen bg-[url('/boat.jpg')] md:bg-cover bg-fixed -z-50 py-48 text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl"><p className={`${cal.variable} font-cal justify-center md:text-cyan-600 md:justify-end flex px-32`}>The Ocean Calls</p></h1>
+      <h1 className="text-center h-screen bg-[url('/boat.jpg')] md:bg-cover bg-fixed -z-50 py-48 text-5xl lg:text-6xl xl:text-8xl"><p className={`${cal.variable} font-cal justify-center md:text-blue-900 md:justify-end flex md:px-5 lg:px-32 px-12`}>The Ocean Calls</p></h1>
       <div className="flex w-screen ">
         {textBlock(data)}
         {/* heading with description */}
@@ -59,9 +59,9 @@ export default function page() {
           {textWrite('⇀ Zodiak')}
           {textWrite('⇀ Paddle boards and much more.')}
         </div>
-        <Link href='/Tours' className={`${poppins.variable} font-pop bg-white justify-start font-light animate-bounce duration-700 pt-10 md:pt-20 text-gray-600 flex px-4 md:px-24`}>Check out our tours. ⬇️ </Link>
+        <CheckTours />
+        
       </div>
-      {/* <Footer /> */}
     </div>
   )
 }

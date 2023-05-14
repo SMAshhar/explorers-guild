@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { RxCross2 } from 'react-icons/Rx'
+import { TfiClose } from "react-icons/tfi"
 import localFont from "next/font/local";
 
 
@@ -35,16 +35,16 @@ export default function Booking() {
 
     return (
         <div>
-            <button onClick={() => setIsOpen(true)} className='text-gray-500 hover:text-gray-700 md:text-gray-300 md:hover:text-gray-500'>
+            <button onClick={() => setIsOpen(true)} className='text-gray-300  hover:text-gray-700'>
                 Book
             </button>
             <div
-                className={`fixed inset-0 z-50 ${isOpen ? "block" : "hidden"
+                className={`fixed inset-0 z-50 ${isOpen ? "transform translate-x-0" : "transform -translate-x-full"
                     } bg-opacity-75 bg-gray-900`}
             >
                 <div className="fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
-                    <div className="relative w-screen max-w-md">
-                        <div className="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+                    <div className="relative w-screen max-w-md ">
+                        <div className="h-full flex flex-col py-6 transition ease-in-out delay-300 bg-white shadow-xl overflow-y-scroll">
                             <div className="px-4 sm:px-6">
                                 <div className="flex items-start justify-between">
                                     <h2 className={`${poppins.variable} font-pop text-lg font-extralight text-gray-900 `}>Next step to book your tour</h2>
@@ -55,7 +55,7 @@ export default function Booking() {
                                             className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                         >
                                             <span className="sr-only">Close panel</span>
-                                            <RxCross2 className="h-6 w-6" aria-hidden="true" />
+                                            <TfiClose className="h-6 w-6" aria-hidden="true" />
                                         </button>
                                     </div>
 

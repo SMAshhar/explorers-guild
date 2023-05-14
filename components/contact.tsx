@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { RxCross2 } from 'react-icons/Rx'
+import { TfiClose } from 'react-icons/tfi'
 import localFont from "next/font/local";
 
 const poppins = localFont({
@@ -55,7 +55,7 @@ export default function Contact() {
                                                 className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                             >
                                                 <span className="sr-only">Close panel</span>
-                                                <RxCross2 className="h-6 w-6" aria-hidden="true" />
+                                                <TfiClose className="h-6 w-6" aria-hidden="true" />
                                             </button>
                                         </div>
 
@@ -119,7 +119,7 @@ export default function Contact() {
                                                     <input
                                                         id="number"
                                                         name="number"
-                                                        type="tel"
+                                                        type="number"
                                                         autoComplete="tel"
                                                         placeholder="0092-xxxx-xxxxxxx"
                                                         value={number}
@@ -142,7 +142,7 @@ export default function Contact() {
                                                         name="message"
                                                         autoComplete="tel"
                                                         placeholder="Text..."
-                                                        value={number}
+                                                        value={message}
                                                         onChange={(e) => setMessage(e.target.value)}
                                                         required
                                                         className="shadow-sm text-gray-700 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-1"

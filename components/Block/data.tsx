@@ -21,12 +21,27 @@ export const tiles: Data[] = [
     {
         heading: 'THAILAND TO MALDIVES',
         text: 'The extreme beauty of pure nature. Icebergs, whales and glaciers break into the sea. Going ashore for hikes in nature and experiencing the culture.',
-        image: '/boat1.webp'
+        image: '/boat1.jpg'
     },
     {
         heading: 'PRIVATE TOURS',
         text: 'Select your bucket list activities and experiences for the whole tour.',
         image: '/sunreef.jpg'
+    },
+    {
+        heading: 'EXPLORING THE CARIBBEAN',
+        text: '9 day tour to explore the unique nature of Greenland and the Westfjords of Iceland.',
+        image: '/carrib.jpg'
+    },
+    {
+        heading: 'EXPLORING THE MIDDLE EAST',
+        text: 'The extreme beauty of pure nature. Icebergs, whales and glaciers break into the sea. Going ashore for hikes in nature and experiencing the culture.',
+        image: '/burj.jpg'
+    },
+    {
+        heading: 'SOMETHING TO LOOK FOR',
+        text: 'Select your bucket list activities and experiences for the whole tour.',
+        image: '/sunreef2.jpg'
     },
 ]
 

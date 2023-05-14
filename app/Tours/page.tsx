@@ -33,6 +33,11 @@ export default function Tours() {
                 {Tile(tiles[1], '/Tours/t-to-m')}
                 {Tile(tiles[2], '/Tours/p-to-t')}
             </div>
+            <div className="flex flex-col md:flex-row bg-white px-3 pb-3">
+                {Tile(tiles[3], '/Tours/t-to-m')}
+                {Tile(tiles[4], '/Tours/p-to-t')}
+                {Tile(tiles[5], '/Tours/i-to-g')}
+            </div>
         </div>
 
     )
